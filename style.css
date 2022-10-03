@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(bck.jpg);
+    color: white;
+    max-height: 100vh;
+}
+
+h1,
+form {
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+form input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+form button {
+    color: #64CFA1;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #dcf3a4;
+}
+
+form input:focus {
+    outline: none;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.done-btn,
+.delete-btn {
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.done-btn {
+    background-color: rgb(58, 219, 144);
+}
+
+.delete-btn {
+    background-color: rgb(231, 84, 84);
+}
