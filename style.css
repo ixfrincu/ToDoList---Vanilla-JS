@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-image: url(bck.jpg);
+    background-image: linear-gradient(90deg, rgba(112, 239, 242, 1) 0%, rgba(29, 253, 187, 0.7875525210084033) 50%, rgba(242, 252, 69, 1) 100%);
     color: white;
     max-height: 100vh;
 }
@@ -40,6 +40,7 @@ form button {
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 0.57rem;
 }
 
 form button:hover {
@@ -70,6 +71,7 @@ form input:focus {
     font-size: 1.5rem;
     margin: 0.5rem;
     padding-left: 0.5rem;
+    transition: all 0.5s ease;
 }
 
 .todo li {
@@ -91,4 +93,19 @@ form input:focus {
 
 .delete-btn {
     background-color: rgb(231, 84, 84);
+}
+
+.fa-circle-check,
+.fa-circle-minus {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.swipe {
+    transform: translateX(50rem);
+    opacity: 0;
 }

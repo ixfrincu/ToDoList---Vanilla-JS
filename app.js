@@ -5,6 +5,7 @@ const todoList = document.querySelector(".todo-list")
 
 //event listeners
 todoButton.addEventListener("click", addTodo)
+todoList.addEventListener("click", deleteCheck)
 
 //functions
 function addTodo(event) {
@@ -43,4 +44,21 @@ function addTodo(event) {
         todoInput.value = ""
     }
 }
+
+function deleteCheck(e) {
+    const item = e.target
+    if (item.classList[0] === "delete-btn") {
+        const doItem = item.parentElement;
+        doItem.classList.add("swipe")
+        doItem.addEventListener('transitionend', () => {
+            doItem.remove()
+        })
+    }
+
+    if (item.classList[0] === "done-btn") {
+        const doItem = item.parentElement;
+        doItem.classList.toggle("completed")
+    }
+}
+
 
