@@ -20,7 +20,7 @@ form {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 form input {
@@ -44,7 +44,8 @@ form button {
 }
 
 form button:hover {
-    background: #dcf3a4;
+    color: white;
+    background: #64CFA1;
 }
 
 form input:focus {
@@ -108,4 +109,39 @@ form input:focus {
 .swipe {
     transform: translateX(50rem);
     opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: #64CFA1;
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 8rem;
+    cursor: pointer;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: #64CFA1;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after {
+    color: #64CFA1;
+    background: white;
 }

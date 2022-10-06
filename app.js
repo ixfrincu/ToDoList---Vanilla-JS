@@ -2,10 +2,12 @@
 const todoInput = document.querySelector(".todo-input")
 const todoButton = document.querySelector(".todo-button")
 const todoList = document.querySelector(".todo-list")
+const filterOp = document.querySelector(".filter-todo")
 
 //event listeners
 todoButton.addEventListener("click", addTodo)
 todoList.addEventListener("click", deleteCheck)
+filterOp.addEventListener("change", filter)
 
 //functions
 function addTodo(event) {
@@ -48,7 +50,7 @@ function addTodo(event) {
 function deleteCheck(e) {
     const item = e.target
     if (item.classList[0] === "delete-btn") {
-        const doItem = item.parentElement;
+        const doItem = item.parentElement
         doItem.classList.add("swipe")
         doItem.addEventListener('transitionend', () => {
             doItem.remove()
@@ -56,9 +58,35 @@ function deleteCheck(e) {
     }
 
     if (item.classList[0] === "done-btn") {
-        const doItem = item.parentElement;
+        const doItem = item.parentElement
         doItem.classList.toggle("completed")
     }
 }
 
-
+function filter(e) {
+    const todos = [...todoList.childNodes];
+    todos.forEach(function (todo) {
+        if (todo.style != undefined && todo.style != null && todo.nodeType == Node.ELEMENT_NODE) {
+            switch (e.target.value) {
+                case "all":
+                    todo.style.display = "flex"
+                    break
+                case "done":
+                    if (todo.classList.contains("completed")) {
+                        console.log('yes')
+                        todo.style.display = "flex"
+                    } else {
+                        todo.style.display = "none"
+                    }
+                    break
+                case "ongoing":
+                    if (!todo.classList.contains("completed")) {
+                        todo.style.display = "flex"
+                    } else {
+                        todo.style.display = "none"
+                    }
+                    break
+            }
+        }
+    });
+}
